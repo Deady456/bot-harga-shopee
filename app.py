@@ -28,10 +28,11 @@ def generate_aesthetic_image(product_name, api_key=None):
     return f"https://loremflickr.com/400/400/{keyword},product/all"
 
 import os
-if os.path.exists("banner.png"):
-    st.image("banner.png", use_container_width=True)
 
 st.markdown("### 🛍️ Bot Kalkulator Harga Shopee & AI Image")
+
+if os.path.exists("banner.png"):
+    st.sidebar.image("banner.png", use_container_width=True)
 
 st.sidebar.markdown("**⚙️ Pengaturan Global**")
 shopee_tax = st.sidebar.number_input("Pajak Shopee (%)", min_value=0.0, max_value=50.0, value=6.5, step=0.1)
