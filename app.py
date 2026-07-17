@@ -27,6 +27,10 @@ def generate_aesthetic_image(product_name, api_key=None):
     keyword = urllib.parse.quote("-".join(words[:2])) if words else "product"
     return f"https://loremflickr.com/400/400/{keyword},product/all"
 
+import os
+if os.path.exists("banner.png"):
+    st.image("banner.png", use_container_width=True)
+
 st.markdown("### 🛍️ Bot Kalkulator Harga Shopee & AI Image")
 
 st.sidebar.markdown("**⚙️ Pengaturan Global**")
