@@ -95,6 +95,7 @@ with tab1:
                         result_df = pd.DataFrame(results)
                         
                         st.success("✅ Proses selesai!")
+                        st.warning("⚠️ Segera download hasilnya! Data ini tidak disimpan secara permanen dan akan hilang jika Anda menutup halaman ini.")
                         
                         col_res1, col_res2 = st.columns([3, 1])
                         with col_res1:
@@ -168,6 +169,7 @@ with tab2:
                     single_result_df.to_excel(output_single, index=False, engine='openpyxl')
                     output_single.seek(0)
                     st.markdown("---")
+                    st.warning("⚠️ Segera export hasilnya! Data ini akan hilang jika halaman dimuat ulang.")
                     st.download_button(
                         label="💾 Export Hasil ini ke Excel", 
                         data=output_single, 
